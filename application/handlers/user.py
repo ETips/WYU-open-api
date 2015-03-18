@@ -34,7 +34,3 @@ def get_score():
     else:
         return response_json('登陆失败，请检查账号密码', 400)
 
-
-@bp.route('/test')
-def test():
-    return response_json('密码错误啊',400)
