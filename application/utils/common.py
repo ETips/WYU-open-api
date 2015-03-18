@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import make_response
+from flask import make_response, jsonify, Response
 import json
 
 
@@ -13,6 +13,8 @@ def response_json(json_obj, status_code=200, headers=None):
     """
     if isinstance(json_obj, str) or isinstance(json_obj, unicode):
         json_obj = {
-            'msg' : json_obj
+            'msg': json_obj
         }
-    return make_response(json.dumps(json_obj), status_code, headers)
+    resp = make_response(json.dumps(json_obj, indent=2), status_code, headers)
+    resp.mimetype = 'application/json'
+    return resp
