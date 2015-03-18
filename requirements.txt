@@ -1,5 +1,5 @@
 beautifulsoup4==4.3.2
-ETipsService==1.0.3
+ETipsService==1.0.6
 Flask==0.10.1
 itsdangerous==0.24
 Jinja2==2.7.3
