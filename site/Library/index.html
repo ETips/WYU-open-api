@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://http://ETips.github.io/WYU-open-api/Library/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+	<title>图书馆接口 - WYU OPEN API</title>
+
+        <link href="../css/bootstrap-3.0.3.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">WYU OPEN API</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href=".."></a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li class="active">
+                            <a href="./">图书馆接口</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../SubSystem/">学生子系统接口</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../WYU-News/">校园新闻接口</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="..">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../SubSystem/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/ETips/WYU-open-api">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#_1">图书馆</a></li>
+        
+            <li><a href="#_2">检索图书</a></li>
+        
+            <li><a href="#_3">查看图书借阅状态</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h2 id="_1">图书馆</h2>
+<h3 id="_2">检索图书</h3>
+<p><code>GET /library/search/&lt;string:keyword&gt;/page/&lt;int:page&gt;</code></p>
+<h4 id="parameters">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th align="left">name</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">keyword</td>
+<td align="left">关键字</td>
+</tr>
+<tr>
+<td align="left">page</td>
+<td align="left">页码</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response</strong></p>
+<pre><code class="json">[
+    {
+        &quot;press_time&quot;: &quot;2015.1&quot;, # 出版时间
+        &quot;num&quot;: &quot;1&quot;, # 序号
+        &quot;index_num&quot;: &quot;TP312JA/H97ah&quot;,  # 索取号
+        &quot;name&quot;: &quot;写给大忙人看的Java SE 8＝Java SE 8 for the really impatient&quot;,# 名称
+        &quot;author&quot;: &quot;(美)Cay S. Horstmann著；张若飞译&quot;,# 作者
+        &quot;press&quot;: &quot;电子工业出版社&quot;, # 出版社
+        &quot;total&quot;: &quot;3&quot;, # 馆藏
+        &quot;ctrlno&quot;: &quot;572952&quot;, # 图书馆系统控制号(在图书馆的唯一编号)
+        &quot;left&quot;: &quot;2&quot;  # 剩余
+    },
+    .......
+]
+</code></pre>
+
+<h3 id="_3">查看图书借阅状态</h3>
+<p><code>GET /library/book/&lt;int:ctrlno&gt;</code></p>
+<h4 id="parameters_1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th align="left">name</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">ctrlno</td>
+<td align="left">图书唯一编号</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response</strong></p>
+<pre><code class="json">{
+    &quot;status_list&quot;: [
+        {
+            &quot;status&quot;: &quot;可供出借&quot;,    # 状态
+            &quot;login_num&quot;: &quot;A1369744&quot;, # 登录号
+            &quot;volume&quot;: &quot;&quot;,  # 卷期
+            &quot;index_num&quot;: &quot;TP312JA/H97ah&quot;,# 索取号
+            &quot;location&quot;: &quot;电工电子计算机馆&quot;,  # 馆藏地
+            &quot;year&quot;: &quot;&quot;, # 年代
+            &quot;type&quot;: &quot;普通图书&quot;  # 借阅类型
+        },
+        {
+            &quot;status&quot;: &quot;可供出借&quot;,
+            &quot;login_num&quot;: &quot;A1369745&quot;,
+            &quot;volume&quot;: &quot;&quot;,
+            &quot;index_num&quot;: &quot;TP312JA/H97ah&quot;,
+            &quot;location&quot;: &quot;电工电子计算机馆&quot;,
+            &quot;year&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;普通图书&quot;
+        }
+    ],
+    &quot;isbn&quot;: &quot;978-7-121-22728-8&quot;
+}
+</code></pre></div>
+        </div>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/prettify-1.0.min.js"></script>
+        <script src="../js/base.js"></script>
+    </body>
+</html>
