@@ -4,17 +4,17 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="五邑大学校园开放接口(非官方版)">
         
-        
-        <link rel="canonical" href="http://http://ETips.github.io/WYU-open-api/WYU-News/">
-        <link rel="shortcut icon" href="../img/favicon.ico">
+        <link rel="canonical" href="http://http://ETips.github.io/WYU-open-api/">
+        <link rel="shortcut icon" href="./img/favicon.ico">
 
-	<title>校园新闻接口 - WYU OPEN API</title>
+	<title>WYU OPEN API</title>
 
-        <link href="../css/bootstrap-3.0.3.min.css" rel="stylesheet">
-        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link href="../css/prettify-1.0.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
+        <link href="./css/bootstrap-3.0.3.min.css" rel="stylesheet">
+        <link href="./css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="./css/prettify-1.0.css" rel="stylesheet">
+        <link href="./css/base.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -41,7 +41,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="..">WYU OPEN API</a>
+            <a class="navbar-brand" href=".">WYU OPEN API</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -50,26 +50,26 @@
             <ul class="nav navbar-nav">
             
             
-                <li >
-                    <a href=".."></a>
+                <li class="active">
+                    <a href="."></a>
                 </li>
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../Library/">图书馆接口</a>
+                            <a href="Library/">图书馆接口</a>
                         </li>
                     
                         <li >
-                            <a href="../SubSystem/">学生子系统接口</a>
+                            <a href="SubSystem/">学生子系统接口</a>
                         </li>
                     
-                        <li class="active">
-                            <a href="./">校园新闻接口</a>
+                        <li >
+                            <a href="WYU-News/">校园新闻接口</a>
                         </li>
                     
                     </ul>
@@ -81,13 +81,13 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
                 
-                <li >
-                    <a rel="next" href="../SubSystem/">
+                <li class="disabled">
+                    <a rel="next" >
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
-                <li class="disabled">
-                    <a rel="prev" >
+                <li >
+                    <a rel="prev" href="Library/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -110,64 +110,46 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#_1">校园新闻</a></li>
+        <li class="main active"><a href="#wyu-open-api">WYU OPEN API</a></li>
         
-            <li><a href="#_2">获取新闻列表</a></li>
+            <li><a href="#_1">缘由</a></li>
         
-            <li><a href="#_3">获取新闻详情</a></li>
+            <li><a href="#_2">开发</a></li>
+        
+            <li><a href="#api">API列表</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="_1">校园新闻</h2>
-<p><strong>base_url=</strong><code>/news</code></p>
-<h3 id="_2">获取新闻列表</h3>
-<p><code>GET /list/&lt;int:page&gt;</code></p>
-<h4 id="response">Response</h4>
-<pre><code class="json">[
-    {
-        &quot;url&quot;: &quot;http://www.wyu.cn/news/news_zxtz/201531811280913123.htm&quot;, //新闻详情链接
-        &quot;from&quot;: &quot;团委&quot;, //来源
-        &quot;type&quot;: &quot;最新通知&quot;, //类型
-        &quot;posttime&quot;: &quot;2015-3-18 11:28:09&quot;, //发布时间
-        &quot;title&quot;: &quot;关于组织开展2015年清明扫墓活动的通知 &quot; //标题
-    },
-    ......
-]
-
-</code></pre>
-
-<h3 id="_3">获取新闻详情</h3>
-<p><code>GET /detail?url=xx</code></p>
-<h4 id="parameters">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th align="left">name</th>
-<th align="left">description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">url</td>
-<td align="left">新闻链接</td>
-</tr>
-</tbody>
-</table>
-<h4 id="response_1">Response</h4>
-<pre><code class="json">{
-  &quot;contnet&quot;: &quot;&lt;tr&gt;\n&lt;td class=\&quot;p2\&quot; &quot;&gt;\u00a0\u00a0\u00a0 3\u6 u711c\u4e66\u8bb0\u4ee3\u8868\u5b66\u6821&lt;/font&gt;&lt;/p&gt;&lt;/td&gt;\n&lt;/tr&gt;&quot;
-}
-</code></pre></div>
+<h1 id="wyu-open-api">WYU OPEN API</h1>
+<blockquote>
+<p>五邑大学校园开放接口(非官方版)</p>
+</blockquote>
+<hr />
+<h3 id="_1">缘由</h3>
+<p>ETips因为校园网不时抽风，有太多的不稳定，所以用户体验比较差。所以隐痛写下这个开放接口。
+接口开发是有限的，因为部分校园接口需要在内网环境下使用，然后这个校园开放接口是挂在外网，所以无法实现。</p>
+<p>当然啦，写这个不只是为了ETips服务，而是我打算用这个来交<code>web开发</code>的课程设计，所以这个项目在本学期开发激情还是杠杠的。</p>
+<h3 id="_2">开发</h3>
+<p>本网站采用Python开发，原因很简单——爬虫比较简单。</p>
+<p>如果你有啥需求、发现bug，请在<a href="https://github.com/ETips/WYU-open-api/issues">issue</a>中提交反馈。
+需求不一定接受，但bug肯定会及时修复。</p>
+<h3 id="api">API列表</h3>
+<p>访问<code>http://112.74.101.0:8000/</code></p>
+<ul>
+<li><a href="Library/">图书馆</a></li>
+<li><a href="./SubSystem">学生子系统</a></li>
+<li><a href="WYU-News/">校园新闻</a></li>
+</ul></div>
         </div>
 
         
 
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../js/prettify-1.0.min.js"></script>
-        <script src="../js/base.js"></script>
+        <script src="./js/bootstrap-3.0.3.min.js"></script>
+        <script src="./js/prettify-1.0.min.js"></script>
+        <script src="./js/base.js"></script>
     </body>
 </html>
